@@ -20,7 +20,7 @@ clauses
   contact("Ivan", "8-915-433-34-14", address("Moscow", "Tverskaya-Yamskaya", 24, 234)).
   contact("Pavel", "8-800-555-25-35", address("Moscow", "Kantemirovskaya", 100, 10)).
   contact("Alex", "+1-234-567-89-10", address("London", "Odessa street", 25, 15)).
-  contact("Mikhail", "8-800-555-35-35", address("Odessa", "Novoselskogo", 45, 3)).
+  contact("Mikhail", "8-800-555-34-31", address("Odessa", "Novoselskogo", 45, 3)).
   
   car("Kirill", "e-twow", "Black", 40000).
   car("Pavel", "Volga", "Black", 100000).
