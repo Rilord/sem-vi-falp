@@ -1,0 +1,231 @@
+<table style="border-collapse: collapse; border: none; border-spacing: 0px;">
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Шаг
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравниваемые термы,
+            <br>
+            результаты, подставновки, если есть
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Дальнейшие действия
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Резольвента
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Результирующая ячейка
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            1
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;nameAndCityTobankAndStreet("Mikhail", "Odessa", Bank, Street) и&nbsp;
+            <br>
+            contact("Kirill", "8-800-555-35-35", address("Moscow", "Pr.Vernadskogo", 15, 100)). Функторы не равны.
+            <br>
+        </td>
+        <tdstyle="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Переход к следующему предложению
+            </td>
+            <td style="padding-right: 3pt; padding-left: 3pt;">
+                nameAndCityTobankAndStreet("Mikhail", "Odessa", Bank, Street)
+            </td>
+            <td style="padding-right: 3pt; padding-left: 3pt;">
+                Пусто<wbr>
+            </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            nameAndCityTobankAndStreet("Mikhail", "Odessa", Bank, Street)&nbsp;
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            14
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;nameAndCityTobankAndStreet("Mikhail", "Odessa", Bank, Street) и&nbsp;
+            nameAndCityTobankAndStreet(Name, City, Bank, Street) :-
+            <br>
+            contact(Name, _, address(City, Street, _, _)),
+            <br>
+            investment(Name, Bank, _). Функторы равны. Успешная унификация. Конкретезация Name="Mikhail", City="Odessa".
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация contact ("Mikhail", _, address(City, Street, _, _))
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contact(Name, _, address(City, Street, _, _)),investment(Name, Bank, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="Odessa"<wbr>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            15
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;contact("Mikhail", _, address("Odessa", Street, _, _)) и&nbsp;contact("Kirill",
+            "8-800-555-35-35",
+            <br>
+            address("Moscow", "Pr.Vernadskogo", 15, 100)). Функторы равны, но аргументы не унифицируются.&nbsp;
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Переход к следующему предложению
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contact(Name, _, address(City, Street, _, _)),investment(Name, Bank, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="Odessa"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...&nbsp;<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contact(Name, _, address(City, Street, _, _)),investment(Name, Bank, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="Odessa"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            19
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;contact("Mikhail", _, address("Odessa", Street, _, _)) и&nbsp; contact("Mikhail",
+            "8-800-555-34-31",
+            <br>
+            address("Odessa", "Novoselskogo", 45, 3)).&nbsp;Успешная унификация. Конкретезация&nbsp;Phone =
+            "8-800-555-34-31", Street = "Novoselskogo"
+            <br>
+            &nbsp;
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация investment ("Mikhail", Bank, _, _).
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            investment(Name, Bank, _, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="Odessa"
+            <br>
+            Phone="8-800-555-34-31"
+            <br>
+            Street = "Novoselskogo"<wbr>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            20
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;investment("Mikhail", Bank, _, _) и&nbsp;car("Kirill", "e-twow", "Black", 40000). Функторы не
+            равны.&nbsp;
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Переход к следующему предложению
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            investment(Name, Bank, _, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="Odessa"
+            <br>
+            Phone="8-800-555-34-31"
+            <br>
+            Street = "Novoselskogo"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            investment(Name, Bank, _, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="
+            <br>
+            Odessa"
+            <br>
+            Phone="8-800-555-34-31"
+            <br>
+            Street = "Novoselskogo"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            26
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;investment("Mikhail", Bank, _, _) и&nbsp;investment("Mikhail", "Gazprom", 20000). Успешная
+            унификация. &nbsp;Конкретизация Bank="Gazprom"
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Откат, ответ найден: (Bank = "Gazprom", Street = "Novoselskogo"). Реконкретезация Bank. Переход к
+            <br>
+            следующему предложению.
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Name="Mikhail"
+            <br>
+            City="Odessa"
+            <br>
+            Phone="8-800-555-34-31"
+            <br>
+            Street = "Novoselskogo"
+            <br>
+            Bank="Gazprom"
+            <br>
+            <wbr>
+        </td>
+    </tr>
+</table>

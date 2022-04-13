@@ -1,0 +1,158 @@
+<table style="border-collapse: collapse; border: none; border-spacing: 0px;">
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Шаг
+            <br>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравниваемые термы,
+            <br>
+            результаты, подставновки, если есть
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Дальнейшие действия
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Резольвента
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Результирующая ячейка
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            1<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;<font color="#24292f">contactToCar(</font>
+            <font color="#000080">"8-800-555-35-35"</font>
+            <font color="#24292f">,&nbsp;</font>Name<font color="#24292f">,&nbsp;</font>Manufacturer<font
+                color="#24292f">,&nbsp;</font>Prce<font color="#24292f">) и&nbsp;</font>
+            <font color="#24292f">contact(</font>
+            <font color="#000080">"Kirill"</font>
+            <font color="#24292f">,&nbsp;</font>
+            <font color="#000080">"8-800-555-35-35"</font>
+            <font color="#24292f">, address(</font>
+            <font color="#000080">"Moscow"</font>
+            <font color="#24292f">,&nbsp;</font>
+            <font color="#000080">"Pr.Vernadskogo"</font>
+            <font color="#24292f">,&nbsp;</font>15<font color="#24292f">,&nbsp;</font>100<font color="#24292f">))</font>
+            .&nbsp;
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Переход к следующему предложению
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            <font color="#24292f">contactToCar(</font>
+            <font color="#000080">"8-800-555-35-35"</font>
+            <font color="#24292f">,&nbsp;</font>Name<font color="#24292f">,&nbsp;</font>Manufacturer<font
+                color="#24292f">,&nbsp;</font>Price<font color="#24292f">)</font>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто<wbr>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            <font color="#24292f">contactToCar(</font>
+            <font color="#000080">"8-800-555-35-35"</font>
+            <font color="#24292f">,&nbsp;</font>Name<font color="#24292f">,&nbsp;</font>Manufacturer<font
+                color="#24292f">,&nbsp;</font>Price<font color="#24292f">)</font>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            14
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение contactToCar("8-800-555-35-35", Name, Manufacturer, Price) и&nbsp;contactToCar(Phone, Name,
+            Manufacturer, Price) :-
+            contact(Name, Phone, _), car(Name, Manufacturer, _, Price). Функторы равны.
+            <br>
+            Конкретезация Phone = "8-800-555-35-35"<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация phone (Name,"8-800-555-35-35", _).
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contact(Name, "8-800-555-35-35", _) car (Name, Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone="8-800-555-35-35"
+            <br>
+            Name=Name<wbr>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            15
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;contact(Name, "8-800-555-35-35", _) и&nbsp;<font color="#24292f">contact(</font>
+            <font color="#000080">"Kirill"</font>
+            <font color="#24292f">,&nbsp;</font>
+            <font color="#000080">"8-800-555-35-35"</font>
+            <font color="#24292f">, address(</font>
+            <font color="#000080">"Moscow"</font>
+            <font color="#24292f">,&nbsp;</font>
+            <font color="#000080">"Pr.Vernadskogo"</font>
+            <font color="#24292f">,&nbsp;</font>15<font color="#24292f">,&nbsp;</font>100<font color="#24292f">)).
+                Успешная унификация. Конкретизация Name="Kirill".</font>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация car ("Kirill", Manufacturer, _, Price)<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            car ("Kirill", Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone="8-800-555-35-35"
+            <br>
+            Name="Kirill"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            20
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение car ("Kirill", Manufacturer, _, Price) и&nbsp;car("Kirill", "e-twow", "Black",
+            40000).&nbsp;Успешная унификация. Конкретизация Manufacturer="e-twow" Price=40000
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Откат, ответ найден: (Phone="<font color="#000080">8-800-555-35-35</font>
+            <br>
+            ", Name="Kirill", Manufacturer="e-twow", Price=40000).&nbsp;Реконкретезация Manufacturer, Price. Переход к
+            следующему предложению.
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone="<font color="#000080">8-800-555-35-35</font>", Name="Kirill", Manufacturer="e-twow", Price=40000
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,221 @@
+<table style="border-collapse: collapse; border: none; border-spacing: 0px;">
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Шаг
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравниваемые термы, результаты, подставновки, если есть
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Дальнейшие действия
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Резольвента
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Результирующая ячейка
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            1
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;phoneToCar("8-800-555-25-35", Manufacturer) и&nbsp; contact("Kirill", "8-800-555-35-35",
+            <br>
+            address("Moscow", "Pr.Vernadskogo", 15, 100)). Функторы не равны.&nbsp;
+            <br>
+        </td>
+        <td style="padding-righ: 3pt; padding-left: 3pt;">
+            Прямой ход. Переход к следующему предложению
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            phoneToCar("8-800-555-25-35", Manufacturer)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто<wbr>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            phoneToCar("8-800-555-25-35", Manufacturer)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            14
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение phoneToCar("8-800-555-25-35", Manufacturer) и&nbsp; phoneToCar(phone, Manufacturer) :-
+            <br>
+            contactToCar(phone, _, Manufacturer, _).&nbsp;Функторы равны. Конкретезация Phone
+            =&nbsp;"8-800-555-25-35".<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация phoneToCar(8-800-555-25-35", _, Manufacturer, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contactToCar(8-800-555-25-35", _, Manufacturer, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            15<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;phoneToCar("8-800-555-25-35", Manufacturer) и&nbsp; nameAndCityTobankAndStreet(Name, City,
+            Bank, Street) :-
+            <br>
+            contact(Name, _, address(City, Street, _, _)),
+            <br>
+            investment(Name, Bank, _). Функторы не равны.&nbsp;
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация phoneToCar(8-800-555-25-35", _, Manufacturer, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contactToCar(8-800-555-25-35", _, Manufacturer, _)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contactToCar(8-800-555-25-35", _, Manufacturer, _)<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение&nbsp;contactToCar("8-800-555-25-35", _, Manufacturer, _) и&nbsp; contactToCar(Phone, Name,
+            Manufacturer, Price) :-
+            <br>
+            contact(Name, Phone, _),
+            <br>
+            car(Name, Manufacturer, _, Price). Функторы равны. Конкретизация Phone="8-800-555-25-35".&nbsp;<wbr>
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация contact (Name, "8-800-555-25-35", _).
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contact (Name, "8-800-555-25-35", _),&nbsp;car(Name, Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+            <br>
+            Name=Name<wbr>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            contact (Name, "8-800-555-25-35", _),&nbsp;car(Name, Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+            <br>
+            Name=Name
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение contact (Name, "8-800-555-25-35", _) и&nbsp; contact("Pavel", "8-800-555-25-35",
+            <br>
+            address("Moscow", "Kantemirovskaya", 100, 10)).&nbsp;Успешная унификация. Конкретизация Name="Pavel".
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Прямой ход. Унификация car("Pavel", Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            car(Name, Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+            <br>
+            Name="Pavel"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            ...
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            car(Name, Manufacturer, _, Price)
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+            <br>
+            Name="Pavel"
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Сравнение car("Pavel", Manufacturer, _, Price) и&nbsp;car("Pavel", "Volga", "Black", 100000).&nbsp;Успешная
+            унификация.&nbsp;Конкретизация Manufacturer = "Volga", Price = 100000
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Откат, ответ найден: (Manufacturer = "Volga"). Реконкретезация Manufacturer, Price. Переход к следующему
+            <br>
+            предложению.
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Пусто
+        </td>
+        <td style="padding-right: 3pt; padding-left: 3pt;">
+            Phone =&nbsp;"8-800-555-25-35".
+            <br>
+            Name="Pavel"
+            <br>
+            Manufacturer="Volga"
+            <br>
+            Price=100000<wbr>
+        </td>
+    </tr>
+</table>
